@@ -79,7 +79,9 @@ subNames = names[2:names.__len__()]
 # print(hasmap.get("6802"))
 
 haveCNIC = input("Do you have CNIC: ")
+
 if haveCNIC == "Yes":
+
     inVoterList = input("Are you in voter list: ")
     if inVoterList == "Yes":
         print("You can cast your Vote")
