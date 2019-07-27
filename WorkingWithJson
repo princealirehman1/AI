@@ -1,0 +1,28 @@
+import json;
+
+class WorkingWithJson:
+
+    def __init__(self):
+
+        self.__myJsonData = '[{name:PRINCE ALI , age: 24 , city : Karachi , cell: 03123121995}]'
+
+        with open("./Data/posts.json",'r') as posts:
+           for items in json.load(posts):
+               pass
+               # print("\t\t\t UserId \t\t\t Id \t\t\t Title \n\t\t\t {0} \t\t\t {1} \t\t\t {2}".format(items['userId'],items['id'],items['title']))
+               # print(items)
+               # print(items['title'])
+
+    def writeJsonToFile(self, json_data , filename):
+        with open('./Data/{0}.json'.format(filename),'w') as myJson:
+            myJson.write(json_data)
+
+    def readJsonFile(self , filename):
+        with open('./Data/{0}.json'.format(filename),'r') as u_json:
+            for item in u_json:
+                print(item)
+
+myJson = WorkingWithJson()
+
+myJson.writeJsonToFile('[{name:PRINCE ALI , age: 24 , city : Karachi , cell: 03123121995}]','myjson')
+myJson.readJsonFile('myjson')
